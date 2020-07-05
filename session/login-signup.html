@@ -68,8 +68,55 @@
             </div>
           </div>
           <div id="signup-content" style="display: none;">
-            <div>Signup</div>
-            <div><button id="login">Login</button></div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sign up</h5>
+                <form id="signup-form" novalidate>
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input
+                      name="email"
+                      type="email"
+                      class="form-control"
+                      class="email"
+                      required
+                      minlength="6"
+                    />
+                    <div class="invalid-feedback">
+                      Must be six characters long, only small letters
+                    </div>
+                    <div class="valid-feedback">All good</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control"
+                      class="password"
+                      required
+                      minlength="4"
+                      maxlength="10"
+                      pattern="^[a-zA-Z0-9 ]*$"
+                    />
+                    <div class="invalid-feedback">
+                      Length must be between 4 to 10 characters, use
+                      alphanumeric password
+                    </div>
+                    <div class="valid-feedback">All good</div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      name="submit"
+                      type="submit"
+                      value="Sign up"
+                      class="btn btn-success"
+                    />
+                  </div>
+                </form>
+                <button id="login" class="btn btn-primary">Login</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
