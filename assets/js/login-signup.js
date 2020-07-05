@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    if (loginForm.checkValidity() === false) {
+      loginForm.classList.add("was-validated");
+      return;
+    }
+    alert("Form submitted");
+  });
     alert("Form submitted");
   });
   function toggleForms() {
