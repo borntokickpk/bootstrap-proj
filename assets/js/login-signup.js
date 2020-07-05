@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     toggleForms();
   });
 
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Form submitted");
+  });
   function toggleForms() {
     const displayPropOfLoginDiv = loginDiv.computedStyleMap().get("display");
 
