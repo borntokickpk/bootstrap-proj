@@ -121,5 +121,30 @@
         </div>
       </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyARljgTxT2a-1LxxGWvrKUB7ktWyWUAcag",
+        authDomain: "bootstrap-proj-9f63f.firebaseapp.com",
+        databaseURL: "https://bootstrap-proj-9f63f.firebaseio.com",
+        projectId: "bootstrap-proj-9f63f",
+        storageBucket: "bootstrap-proj-9f63f.appspot.com",
+        messagingSenderId: "61712791241",
+        appId: "1:61712791241:web:ff5b0d2697e5a08252ff18",
+        measurementId: "G-XJR1S88T6R",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="../assets/js/login-signup.js"></script>
   </body>
 </html>
