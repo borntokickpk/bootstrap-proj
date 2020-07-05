@@ -22,7 +22,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
       loginForm.classList.add("was-validated");
       return;
     }
-    alert("Form submitted");
+    if (firebase.auth().currenUser) {
+      firebase.auth().signOut();
+      return;
+    }
+
+    const email = loginForm.elements["email"].value;
+    const password = loginForm.elements["password"].value;
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(function (res) {
+        toastr.success(`${res.user.email} has logged in`, "Success", {
+          timeOut: 2000,
+        });
+      })
+      .catch(function (error) {
+        toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+      });
   });
 
   signupForm.addEventListener("submit", function (event) {
