@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const loginDiv = document.querySelector("#login-content");
   const signupDiv = document.querySelector("#signup-content");
 
+  const loginForm = document.querySelector("#login-form");
+  const signupForm = document.querySelector("#signup-form");
+
   signupButton.addEventListener("click", function (event) {
     toggleForms();
   });
@@ -21,8 +24,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     alert("Form submitted");
   });
+
+  signupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (signupForm.checkValidity() === false) {
+      signupForm.classList.add("was-validated");
+      return;
+    }
     alert("Form submitted");
   });
+
   function toggleForms() {
     const displayPropOfLoginDiv = loginDiv.computedStyleMap().get("display");
 
