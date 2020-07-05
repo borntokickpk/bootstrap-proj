@@ -31,7 +31,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
       signupForm.classList.add("was-validated");
       return;
     }
-    alert("Form submitted");
+
+    const email = signupForm.elements["email"].value;
+    const password = signupForm.elements["password"].value;
+
+    console.log(email);
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(function (res) {
+        toastr.success(`${res.user.email} has registered`, "Success", {
+          timeOut: 2000,
+        });
+      })
+      .catch(function (error) {
+        toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+      });
   });
 
   function toggleForms() {
