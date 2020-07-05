@@ -37,9 +37,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toastr.success(`${res.user.email} has logged in`, "Success", {
           timeOut: 2000,
         });
+        loginForm.elements["email"].value = "";
+        loginForm.elements["password"].value = "";
       })
       .catch(function (error) {
         toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+        loginForm.elements["password"].value = "";
       });
   });
 
@@ -62,9 +65,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toastr.success(`${res.user.email} has registered`, "Success", {
           timeOut: 2000,
         });
+        loginForm.elements["email"].value = "";
+        loginForm.elements["password"].value = "";
       })
       .catch(function (error) {
         toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+        loginForm.elements["password"].value = "";
       });
   });
 
