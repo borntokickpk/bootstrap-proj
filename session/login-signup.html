@@ -7,11 +7,13 @@
 
     <!-- #region Styles-->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/toastr.min.css" />
     <link rel="stylesheet" href="../assets/css/login-signup.css" />
     <!-- #endregion -->
 
     <!-- #region Scripts-->
-    <script src="../assets/js/login-signup.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/toastr.min.js"></script>
     <!-- #endregion -->
   </head>
   <body>
@@ -24,19 +26,22 @@
                 <h5 class="card-title">Login</h5>
                 <form id="login-form" novalidate>
                   <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="email">email</label>
                     <input
-                      type="text"
+                      name="email"
+                      type="email"
                       class="form-control"
-                      class="username"
+                      class="email"
                       required
-                      pattern="^[a-zA-Z]*$"
+                      minlength="6"
                     />
-                    <div class="invalid-feedback">Username is required</div>
+                    <div class="invalid-feedback">Must be a valid email address</div>
+                    <div class="valid-feedback">All good</div>
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
                     <input
+                      name="password"
                       type="password"
                       class="form-control"
                       class="password"
@@ -49,9 +54,11 @@
                       Length must be between 4 to 10 characters, use
                       alphanumeric password
                     </div>
+                    <div class="valid-feedback">All good</div>
                   </div>
                   <div class="form-group">
                     <input
+                      name="submit"
                       type="submit"
                       value="Login"
                       class="btn btn-success"
@@ -63,11 +70,81 @@
             </div>
           </div>
           <div id="signup-content" style="display: none;">
-            <div>Signup</div>
-            <div><button id="login">Login</button></div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sign up</h5>
+                <form id="signup-form" novalidate>
+                  <div class="form-group">
+                    <label for="email">email</label>
+                    <input
+                      name="email"
+                      type="email"
+                      class="form-control"
+                      class="email"
+                      required
+                      minlength="6"
+                    />
+                    <div class="invalid-feedback">Must be a valid email address</div>
+                    <div class="valid-feedback">All good</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control"
+                      class="password"
+                      required
+                      minlength="4"
+                      maxlength="10"
+                      pattern="^[a-zA-Z0-9 ]*$"
+                    />
+                    <div class="invalid-feedback">
+                      Length must be between 4 to 10 characters, use
+                      alphanumeric password
+                    </div>
+                    <div class="valid-feedback">All good</div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      name="submit"
+                      type="submit"
+                      value="Sign up"
+                      class="btn btn-success"
+                    />
+                  </div>
+                </form>
+                <button id="login" class="btn btn-primary">Login</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyARljgTxT2a-1LxxGWvrKUB7ktWyWUAcag",
+        authDomain: "bootstrap-proj-9f63f.firebaseapp.com",
+        databaseURL: "https://bootstrap-proj-9f63f.firebaseio.com",
+        projectId: "bootstrap-proj-9f63f",
+        storageBucket: "bootstrap-proj-9f63f.appspot.com",
+        messagingSenderId: "61712791241",
+        appId: "1:61712791241:web:ff5b0d2697e5a08252ff18",
+        measurementId: "G-XJR1S88T6R",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="../assets/js/login-signup.js"></script>
   </body>
 </html>

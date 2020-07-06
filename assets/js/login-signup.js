@@ -22,7 +22,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
       loginForm.classList.add("was-validated");
       return;
     }
-    alert("Form submitted");
+    if (firebase.auth().currenUser) {
+      firebase.auth().signOut();
+      return;
+    }
+
+    const email = loginForm.elements["email"].value;
+    const password = loginForm.elements["password"].value;
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(function (res) {
+        toastr.success(`${res.user.email} has logged in`, "Success", {
+          timeOut: 2000,
+        });
+        loginForm.elements["email"].value = "";
+        loginForm.elements["password"].value = "";
+      })
+      .catch(function (error) {
+        toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+        loginForm.elements["password"].value = "";
+      });
   });
 
   signupForm.addEventListener("submit", function (event) {
@@ -31,7 +52,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
       signupForm.classList.add("was-validated");
       return;
     }
-    alert("Form submitted");
+
+    const email = signupForm.elements["email"].value;
+    const password = signupForm.elements["password"].value;
+
+    console.log(email);
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(function (res) {
+        toastr.success(`${res.user.email} has registered`, "Success", {
+          timeOut: 2000,
+        });
+        loginForm.elements["email"].value = "";
+        loginForm.elements["password"].value = "";
+      })
+      .catch(function (error) {
+        toastr.error(`${error.message}`, "Error", { timeOut: 2000 });
+        loginForm.elements["password"].value = "";
+      });
   });
 
   function toggleForms() {
