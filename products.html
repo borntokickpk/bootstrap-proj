@@ -47,9 +47,9 @@
 
     <div class="row">
       <!-- Product  -->
-      <div class=" product-grid">
+      <div class="col-lg-3 col-md-4 col-sm-6 product-grid">
         <div class="image">
-          <a href="#">
+          <a href="#" data-toggle="modal" data-target="#myModal">
             <img src="images/macbook.jpg" class="w-100">
             <div class="overlay">
               <div class="detail">View Details</div>
@@ -150,7 +150,37 @@
 
 
 
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-lg-4">
+                                  <img src="images/macbook.jpg" class="w-100">
+                                </div>
+                                <div class="col-lg-8">
+                                  <h2 class="text-center">Details</h2>
+                                  <p class="font-weight-bold">Name:<br>Price:<br>Other Specs:</p>
+                                </div>
+                              </div>
+                            </div>
 
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
 
 
 
