@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Admin panel</title>
+
+    <style>
+    	#menu ul li a:hover{
+    		background-color: white;
+    		color: black;
+    		border-radius: 10px;
+    		transition: .5s ease;
+    	}
+    </style>
+  </head>
+<body>
+	<!-- navifation bar -->
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<a href="#" class="navbar-brand text-warning">&nbsp; &nbsp;
+		<i class="fa fa-laptop mr-1"></i>Bilal computers
+	</a>
+	<button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="menu">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a href="#" class="nav-link active">
+					<i class="fa fa-dashboard"></i>Dashboard
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="#" class="nav-link">
+					<i class="fa fa-product"></i>Products
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a href="#" class="nav-link">
+					<i class="fa fa-account"></i>Account
+				</a>
+			</li>
+
+			<li class="nav-item ">
+				<a href="#" class="nav-link">
+					<i class="fa fa-users"></i>Users
+				</a>
+			</li>
+		</ul>
+
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<div class="dropdown">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-id-badge">tech</i>
+					</a>
+					<div class="dropdown-menu">
+						<a href="#" class="dropdown-item">Profile</a>
+						<a href="#" class="dropdown-item">Change password</a>
+					</div>
+				</div>
+			</li>
+
+			<li class="nav-item">
+				<a href="#" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a>
+			</li>
+			
+		</ul>
+	</div>
+</nav>
+
+		<!-- Dashboard head -->
+
+	<div class="text-white p-3" style="background-color: rgba(248,70,129,0.6)">
+		<h1>&nbsp; &nbsp;<i class="fa fa-chart-bar"></i> Dashboard</h1>
+	</div>
+	<div class="bg-light">
+		<div class="row py-3">
+			<div class="col-md-4">
+				<a href="#" class="btn btn-primary d-block"><i class="fa fa-plus"></i>Add new user</a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-success d-block"><i class="fa fa-plus"></i>Delet user</a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="btn btn-secondary d-block"><i class="fa fa-plus"></i>Add product</a>
+			</div>
+		</div>
+	</div>
+
+
+		<!-- Dashboard content -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<h2 class="text-white" style="background-color: rgba(248,70,129,0.6)">Orders History</h2>
+				<div class="container d-block">
+					<table class="table mt-3">
+						<thead class="table-dark">
+							<tr>
+								<th>#</th>
+								<th>ID</th>
+								<th>Customer'name</th>
+								<th>Product</th>
+								<th>Date</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>2391</td>
+							<td>Ali Hassan</td>
+							<td>HP laptop</td>
+							<td>12-07-2019</td>
+							<td><a href="#" class="btn btn-outline-secondary btn-sm">Details</a></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-4 mt-4">
+				<div class="card">
+					<div class="bg-primary text-white p-4">
+						<i class="fa fa-list-ul "></i>
+						<h2 class="float-right font-weight-bold" style="font-size: 35px;text-align: center;">0
+							<span class="d-block">Products</span></h2>
+					</div>
+					<div class="card-footer text-primary">
+						<h6 class="text-center"><a href="#">View Details</a></h6>
+					</div>
+				</div>
+
+				<div class="card mt-3">
+					<div class="bg-primary text-white p-4">
+						<i class="fa fa-list-ul"></i>
+						<h2 class="float-right font-weight-bold" style="font-size: 35px;text-align: center;">
+							<span class="d-block">Anything</span></h2>
+					</div>
+					<div class="card-footer text-primary">
+						<h6 class="text-center"><a href="#">View Details</a></h6>
+					</div>
+				</div>
+
+				<div class="card mt-3">
+					<div class="bg-primary text-white p-4">
+						<i class="fa fa-list-ul "></i>
+						<h2 class="float-right font-weight-bold" style="font-size: 35px;text-align: center;">
+							<span class="d-block">Anything</span></h2>
+					</div>
+					<div class="card-footer text-primary">
+						<h6 class="text-center"><a href="#">View Details</a></h6>
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
